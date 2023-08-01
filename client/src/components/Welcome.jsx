@@ -20,7 +20,7 @@ const Input = ({ placeholder, name, type, value, handleChange }) => (
   />
 );
 
-// welcome text here
+
 const Welcome = () => {
   const { currentAccount, connectWallet, handleChange, sendTransaction, formData, isLoading } = useContext(TransactionContext);
 
