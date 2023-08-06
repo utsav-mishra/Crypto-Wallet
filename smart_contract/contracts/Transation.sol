@@ -20,6 +20,7 @@ contract Transactions {
 
     TransferStruct[] transactions;
 
+    // add transaction to the blockchain
     function addToBlockchain(address payable receiver, uint amount, string memory message, string memory keyword) public {
         transactionCount += 1;
         transactions.push(TransferStruct(msg.sender, receiver, amount, message, block.timestamp, keyword));
@@ -27,10 +28,12 @@ contract Transactions {
         emit Transfer(msg.sender, receiver, amount, message, block.timestamp, keyword);
     }
 
+    // returns all the transactions
     function getAllTransactions() public view returns (TransferStruct[] memory) {
         return transactions;
     }
 
+    // return transaction count
     function getTransactionCount() public view returns (uint256) {
         return transactionCount;
     }
